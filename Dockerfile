@@ -18,4 +18,4 @@ RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 8080
 
-CMD php artisan key:generate --show
+CMD php artisan migrate --force || true && php artisan serve --host=0.0.0.0 --port=8080
